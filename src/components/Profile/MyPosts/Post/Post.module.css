@@ -1,0 +1,7 @@
+
+.posts {
+    grid-area: c;
+  }
+  .posts img {
+    width: 300px
+  }
