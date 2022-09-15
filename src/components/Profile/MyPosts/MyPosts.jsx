@@ -7,14 +7,14 @@ import Message from "../../Dialogs/Message/Message";
 
 
 const MyPosts = (props) => {
-  let posts = [
+  /*let posts = [
     {id: 1, message: 'hip', likesCount: 5},
     {id: 2, message: 'hap', likesCount: 5},
     {id: 3, message: 'bmw', likesCount: 5},
     {id: 4, message: 'range rover', likesCount: 5},
     {id: 5, message: 'mybach', likesCount: 777},
-  ]
-  let postsElements = posts.map( p=> <Post message={p.message} id={p.id} likesCount={p.likesCount} />);
+  ]*/
+  let postsElements = props.posts.map( p=> <Post message={p.message} id={p.id} likesCount={p.likesCount} />);
   return <div className={s.Profile}>
 
     My post
