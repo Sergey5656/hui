@@ -4,6 +4,7 @@ import {renderEntireTree} from "../render";
 
 let state = {
     profilePage: {
+        newPostText: 'somov.s001'
         posts: [
             {id: 1, message: 'hip', likesCount: 5},
             {id: 2, message: 'hap', likesCount: 5},
@@ -32,8 +33,10 @@ export let addPost = (postMessage) => {
     let newPost = {
         id:5,
         message: postMessage,
-        likesCount: 0
+        likesCount: 100
     };
+    console.log(state)
+
     state.profilePage.posts.push(newPost);
 
     renderEntireTree(state);
