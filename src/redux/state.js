@@ -8,7 +8,7 @@ let store = {
         profilePage: {
             newPostText: 'somov.s001',
             posts: [
-                {id: 1, message: 'hip', likesCount: 5},
+                {id: 1, message: 'hiiiiip', likesCount: 5},
                 {id: 2, message: 'hap', likesCount: 5},
                 {id: 3, message: 'bmw', likesCount: 5},
                 {id: 4, message: 'range rover', likesCount: 5},
@@ -64,26 +64,26 @@ let store = {
         if (action.type === ADD_POST) {
             let newPost = {
             id:5,
-            message: postMessage,
+            message: this._state.profilePage.newPostText,
             likesCount: 100
 
-        };
+            };
             this._state.profilePage.posts.push(newPost);
-
+            console.log(this._state.profilePage.posts);
             this._callSubscriber(this._state);
 
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText=action.newText;
-
+            this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }
         else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.bady;
+            this._state.dialogsPage.newMessageBody = action.body;
             this._callSubscriber(this._state);
+
         }else if (action.type === SEND_MESSAGE) {
             let body = this._state.dialogsPage.newMessageBody;
             this._state.dialogsPage.newMessageBody = '';
-            this._state.dialogsPage.messages.push({id: 777, message: 'body'});
+            this._state.dialogsPage.messages.push({id: 777, message: body});
             this._callSubscriber(this._state);
         }
     }
