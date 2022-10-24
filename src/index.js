@@ -5,20 +5,13 @@ import './index.css';
 import App from './App';
 import {Provider} from "react-redux";
 
-let renderEntireTree = (state) => {
+
     ReactDOM.render(
         <React.StrictMode>
             <Provider store={store}>
             <App />
             </Provider>
         </React.StrictMode>,
-        document.getElementById('root')
-    );
-}
-renderEntireTree(store.getState());
+        document.getElementById('root'));
 
 
-store.subscribe (() => {
-    let state = store.getState();
-    renderEntireTree(state);
-});
