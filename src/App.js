@@ -10,6 +10,8 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import store, {updateNewPostText} from "./redux/store";
 import DialogsContainer from "./components/Dialogs/DialogsConteiner";
+import Users from "./components/Users/Users";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 const App = (props) => {
@@ -27,7 +29,7 @@ const App = (props) => {
                         <Route path='/news' element={<News />}/>
                         <Route path='/music' element={<Music />}/>
                         <Route path='/settings' element={<Settings />}/>
-                        <Route path='/users' element={<Users />}/>
+                        <Route path='/users' element={<UsersContainer />}/>
                     </Routes>
                 </div>
             </div>
