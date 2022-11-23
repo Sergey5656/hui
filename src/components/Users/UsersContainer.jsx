@@ -19,7 +19,7 @@ class UsersContainer extends React.Component {
             .then(response => {
                 this.props.toggleIsFetching(false);
             this.props.setUsers(response.data.items);
-            this.props.setTotalUsersCount(response.data.totalCount);
+            this.props.setUsersTotalCount(response.data.totalCount);
         });
     }
 
@@ -35,7 +35,7 @@ class UsersContainer extends React.Component {
     render() {
         return <>
             {this.props.isFetching ? <Preloader/> : null }
-            <Users totalUsersCount={this.props.totalUsersCount}
+            <Users setUsersTotalCount={this.props.totalUsersCount}
                    pageSize={this.props.pageSize}
                    currentPage={this.props.currentPage}
                    users={this.props.users}
